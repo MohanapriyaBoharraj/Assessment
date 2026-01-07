@@ -14,7 +14,7 @@ Then Created one nano file, it contains
 
   <p>Welcome to my page</p> 
 
-Created configuratin file 
+Created configuration file 
 
   => sudo nano /etc/nginx/sites-available/hosthtml 
 
@@ -47,6 +47,8 @@ It contains,
 Then run it in browser  
  
  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6acb1dc5-a533-491d-9ad9-cfaa9d3f0431" />
+
+--Create a Dockerfile--
 
 =>sudo nano Dockerfile
 
@@ -84,21 +86,23 @@ Then run it in browser
 
 ---Login docker with in Linux---
 
-=>docker login -u mohanapriyab
+=>docker login -u username
   
   Logs you into Docker Hub using the username mohanapriyab.
 
-=>docker tag demo1 mohanapriyab/demo1:latest
+=>docker tag tagname username/imagename
   
   Creates a new name (tag) for an existing image.
   
-=>docker push mohanapriyab/demo1:latest
+=>docker push username/imagename
   
   Uploads the image from your local machine to Docker Hub.
 
 Then open the Docker hub and it has the image that we created
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/52f15bf0-74af-4125-99ba-4ebf65518a84" />
+
+
 
 
 
