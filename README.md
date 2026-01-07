@@ -52,10 +52,8 @@ Then run it in browser
 
   FROM nginx:latest
 
-  # Copy your website files to nginx folder
   COPY . /usr/share/nginx/html
 
-  # Expose port 80
   EXPOSE 80
 
 =>docker build -t host_image .
@@ -65,15 +63,23 @@ Then run it in browser
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ceeb10f5-bc8f-4251-88d6-0f768aeb7305" />
 
 =>sudo lsof -i:8077
+  
   When i run 8077 port,it belongs to nginx
+  
   COMMAND  PID     USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+  
   nginx   3476     root    8u  IPv4  33334      0t0  TCP *:8077 (LISTEN)
+  
   nginx   3477 www-data    8u  IPv4  33334      0t0  TCP *:8077 (LISTEN)
 
 =>sudo lsof -i:8066
+  
   When i run 8066 port,it belongs to docker
+  
   COMMAND    PID USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+  
   docker-pr 5068 root    7u  IPv4  39892      0t0  TCP *:8066 (LISTEN)
+  
   docker-pr 5073 root    7u  IPv6  39893      0t0  TCP *:8066 (LISTEN)
 
 ---Login docker with in Linux---
