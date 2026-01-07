@@ -83,13 +83,17 @@ Then run it in browser
   docker-pr 5073 root    7u  IPv6  39893      0t0  TCP *:8066 (LISTEN)
 
 ---Login docker with in Linux---
+
 =>docker login -u mohanapriyab
+  
   Logs you into Docker Hub using the username mohanapriyab.
 
 =>docker tag demo1 mohanapriyab/demo1:latest
+  
   Creates a new name (tag) for an existing image.
   
 =>docker push mohanapriyab/demo1:latest
+  
   Uploads the image from your local machine to Docker Hub.
 
 Then open the Docker hub and it has the image that we created
