@@ -1,6 +1,6 @@
                                                     --Assessment Documentation--
 
-   =======================================================PROJECT 1  DOCUMENTATION========================================================================
+   =========PROJECT 1  DOCUMENTATION============
 
 Firstly, To create a docker image using Static html  
 
