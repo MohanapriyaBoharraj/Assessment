@@ -4,10 +4,6 @@
 
 Firstly, To create a docker image using Static html  
 
-
-
-
-
 => sudo mkdir -p /var/www/hosthtml  
 
 Created directory and named it hosthtml 
@@ -135,7 +131,9 @@ STEP9: Push it in local commits => git push
 
      =======================================================PROJECT 2  DOCUMENTATION========================================================================
 
+Create one directory 
 
+=>
 
 
 
