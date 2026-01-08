@@ -238,20 +238,108 @@ Then open the Docker hub and it has the image that we created
 
 =============================================================================================================================
 
+             ================================PROJECT 3 DOCUMENTATION======================================
 
 
+Create one directory 
 
+         =>mkdir project3
+
+         =>cd project3
+       
+Then created one nano yml file for docker compose  :-
+        
+         =>sudo nano docker-compose.yml
+
+Inside it ,
+          
+          version: "3.9"
+
+          services:(containerA)
   
+          mohana:
+    
+          image: redis:7
+    
+           container_name: redis-server
+    
+          networks:
+      
+          - my-network
+
+          client:(ContainerB)
+    
+          image: redis:7
+    
+           container_name: redis-client
+    
+           depends_on:
+      
+           - mohana
+    
+           networks:
+      
+          - my-network
+    
+           command: ["sleep", "infinity"]
+
+           networks:
+  
+           my-network:
+    
+           driver: bridge
+
+The above code i have customise network name
+
+And then compose it
+
+           =>docker-compose up -d
+
+          Docker Compose:
+
+          Created a custom network (redis-net)
+
+          Started Redis server container (redis-server)
+
+          Started Redis client container (redis-client)
+
+          -d means detached mode (runs in background)
+
+           Both containers are now running and connected to the same network.
+
+Entered inside the redis-client container
+           
+           =>docker exec -it redis-client bash
+
+           -it - interactive terminal
+
+            bash - Linux shell inside container
 
 
+Then see like this,
+
+            =>root@b78145ad87d8:/data#
+
+            “I am now working inside the redis-client container as root user”
 
 
+Client container is trying to connect to Redis server using its container name
 
+            =>redis-cli -h hostname
 
+Client container can reach Server container using hostname
 
+            =>hostname:6379>
+            
+             then type here Ping then it shows PONG
 
+<img width="854" height="200" alt="image" src="https://github.com/user-attachments/assets/74e4b222-0c82-4a65-99ab-b20a68de4b81" />
 
+Push Image to Docker Hub
 
+Push the files to Git Hub
+
+=============================================================================================================================================================================
 
 
 
