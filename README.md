@@ -88,17 +88,21 @@ Then run it in browser
 
 ----------------Login docker with in Linux--------------------
 
-=>docker login -u username
-  
-      Logs you into Docker Hub using the username mohanapriyab.
+Logs you into Docker Hub using the username mohanapriyab.
 
-=>docker tag tagname username/imagename
+          =>docker login -u username
   
-      Creates a new name (tag) for an existing image.
+Creates a new name (tag) for an existing image.    
+
+          =>docker tag tagname username/imagename
   
-=>docker push username/imagename
+Uploads the image from your local machine to Docker Hub.   
+
+          =>docker push username/imagename
   
-      Uploads the image from your local machine to Docker Hub.
+If we want ,we can pull the image from docker hub 
+
+          =>docker pull username/imagename:latest
 
 Then open the Docker hub and it has the image that we created
 
