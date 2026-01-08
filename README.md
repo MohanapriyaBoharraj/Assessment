@@ -193,7 +193,7 @@ Displays the contents of log.txt to verify data is being written.
 
           =>docker exec -it writer1 cat /data/log.txt
 
-          <img width="917" height="252" alt="image" src="https://github.com/user-attachments/assets/992d4444-b263-4fce-935b-e5913e7e5f4e" />
+<img width="917" height="252" alt="image" src="https://github.com/user-attachments/assets/992d4444-b263-4fce-935b-e5913e7e5f4e" />
 
 Docker stop and remove writer1:-
 
@@ -210,8 +210,7 @@ Old data (from writer1) still exists
 New data is appended by writer2
 
           =>docker exec -it writer2 cat /data/log.txt
-
-          <img width="933" height="384" alt="image" src="https://github.com/user-attachments/assets/bc3f41bf-5147-4045-9bf4-cc3bf4b06586" />
+<img width="933" height="384" alt="image" src="https://github.com/user-attachments/assets/bc3f41bf-5147-4045-9bf4-cc3bf4b06586" />
 
 ----------------Login docker with in Linux--------------------
 
