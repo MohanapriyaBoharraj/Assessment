@@ -133,7 +133,103 @@ STEP9: Push it in local commits => git push
 
 Create one directory 
 
-=>
+         =>mkdir project2
+
+         =>cd project2
+       
+Then created one nano file for python :-
+        
+          =>sudo nano app.py
+
+  app.py contains,
+
+          import time
+
+          file_path = "/data/log.txt"
+
+          while True:
+          
+          current_time = time.ctime()
+        
+          with open(file_path, "a") as f:
+          
+          f.write("Logged at: " + current_time + "\n")
+
+          print("Logged data")
+          
+          time.sleep(5)
+
+Then created one nano file for Dockerfile :-
+  
+          =>nano Dockerfile
+
+Dockerfile contains,
+          
+          FROM python:3.10-slim
+         
+          WORKDIR /app
+          
+          COPY app.py .
+          
+          CMD ["python", "app.py"]
+
+And build that image:-
+   
+          =>docker build -t dataimage .
+
+Creates a Docker volume named app-data to store persistent data outside containers:-
+
+          =>docker volume create app-data
+
+Lists all Docker volumes to verify that app-data was created successfully:-
+
+          =>docker volume ls
+
+Runs the first container (writer1):-
+
+          =>docker run -d   --name writer1   -v app-data:/data   dataimage
+
+Displays the contents of log.txt to verify data is being written.
+
+          =>docker exec -it writer1 cat /data/log.txt
+
+Docker stop and remove writer1:-
+
+          =>docker stop writer1
+
+          =>docker rm writer1
+
+Runs a new container (writer2) using the same volume:-          
+   
+          =>docker run -d   --name writer2   -v app-data:/data   dataimage
+
+Old data (from writer1) still exists
+
+New data is appended by writer2
+
+          =>docker exec -it writer2 cat /data/log.txt
+
+----------------Login docker with in Linux--------------------
+
+Logs you into Docker Hub using the username mohanapriyab.
+
+          =>docker login -u username
+  
+Creates a new name (tag) for an existing image.    
+
+          =>docker tag tagname username/imagename
+  
+Uploads the image from your local machine to Docker Hub.   
+
+          =>docker push username/imagename
+  
+If we want ,we can pull the image from docker hub 
+
+          =>docker pull username/imagename:latest
+
+Then open the Docker hub and it has the image that we created
+
+=============================================================================================================================
 
 
 
